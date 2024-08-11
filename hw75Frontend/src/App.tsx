@@ -1,8 +1,7 @@
-import './App.css'
+import './App.css';
 import Cipher from "./components/Cipher/Cipher.tsx";
 
 const App=()=>{
-
   return (
     <>
         <Cipher></Cipher>
@@ -10,4 +9,4 @@ const App=()=>{
   )
 }
 
-export default App
+export default App;
