@@ -22,7 +22,7 @@ export const cipherSlice  = createSlice({
             state.itemsFetching = true;
         }).addCase(encode.fulfilled, (state, {payload:decode})=>{
             state.itemsFetching = true;
-            state.encode  = decode
+            state.decode  = decode
         }).addCase(encode.rejected, (state)=>{
             state.itemsFetching = false;
         })
@@ -30,7 +30,7 @@ export const cipherSlice  = createSlice({
             state.itemsFetching = true;
         }).addCase(decode.fulfilled, (state, {payload:encode})=>{
             state.itemsFetching = true;
-            state.decode = encode;
+            state.encode = encode;
         }).addCase(decode.rejected, (state)=>{
             state.itemsFetching = false;
         })},
