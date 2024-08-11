@@ -20,9 +20,9 @@ export const cipherSlice  = createSlice({
     extraReducers: (builder)=>{
         builder.addCase(encode.pending, (state)=>{
             state.itemsFetching = true;
-        }).addCase(encode.fulfilled, (state, {payload:encode})=>{
+        }).addCase(encode.fulfilled, (state, {payload:decode})=>{
             state.itemsFetching = true;
-            state.encode = encode;
+            state.encode  = decode
         }).addCase(encode.rejected, (state)=>{
             state.itemsFetching = false;
         })
@@ -30,7 +30,7 @@ export const cipherSlice  = createSlice({
             state.itemsFetching = true;
         }).addCase(decode.fulfilled, (state, {payload:encode})=>{
             state.itemsFetching = true;
-            state.encode = encode;
+            state.decode = encode;
         }).addCase(decode.rejected, (state)=>{
             state.itemsFetching = false;
         })},
@@ -41,7 +41,7 @@ export const cipherSlice  = createSlice({
     }
 })
 
-export const productsReducer = cipherSlice.reducer;
+export const cipherReducer = cipherSlice.reducer;
 
 export const {
     selectEncode,
